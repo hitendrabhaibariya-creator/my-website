@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Micu ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#ffe0ec, #fff);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.card {
+  background: white;
+  margin: 30px 20px;
+  padding: 22px;
+  border-radius: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: #ff4d88;
+  font-size: 26px;
+}
+
+.name {
+  font-size: 22px;
+  color: #ff2f73;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.teddy {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.yes {
+  background: #ff4d88;
+  color: white;
+}
+
+.no {
+  background: #ddd;
+  position: absolute;
+}
+
+.music {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<script>
+for(let i=0;i<20;i++){
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (4+Math.random()*4)+"s";
+  document.body.appendChild(heart);
+}
+</script>
+
+<div class="card">
+  <div class="teddy">🧸💞</div>
+
+  <h1>I’m Really Sorry</h1>
+  <div class="name">Micu 🌸</div>
+
+  <p>
+    I know I made a mistake 😔<br>
+    I never wanted to hurt you 💔
+  </p>
+
+  <p>
+    You mean a lot to me 💕<br>
+    Please forgive me 🥺
+  </p>
+
+  <div class="buttons">
+    <button class="yes" onclick="forgive()">Yes 💖</button>
+    <button class="no" id="noBtn">No 😝</button>
+  </div>
+
+  <div class="music">
+    🎵 Tap anywhere to play music
+  </div>
+</div>
+
+<audio id="song" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c6c8b6b2b.mp3?filename=soft-piano-ambient-110624.mp3">
+</audio>
+
+<script>
+function forgive(){
+  alert("Yay! Thank you Micu 🤗💗");
+}
+
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", ()=>{
+  noBtn.style.left = Math.random()*70 + "%";
+  noBtn.style.top = Math.random()*70 + "%";
+});
+
+document.body.addEventListener("click", ()=>{
+  document.getElementById("song").play();
+},{ once:true });
+</script>
+
+</body>
+</html>
